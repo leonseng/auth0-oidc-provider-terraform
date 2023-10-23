@@ -1,11 +1,12 @@
 
 resource "random_id" "id" {
+  count       = var.object_name_prefix == "" ? 1 : 0
   byte_length = 4
-  prefix      = "nginx-oidc-"
+  prefix      = "auth0-oidc-provider"
 }
 
 locals {
-  name_prefix = random_id.id.dec
+  name_prefix = var.object_name_prefix == "" ? random_id.id.dec : var.object_name_prefix
 }
 
 resource "auth0_connection" "this" {

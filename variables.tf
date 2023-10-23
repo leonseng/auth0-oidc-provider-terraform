@@ -1,3 +1,8 @@
+variable "object_name_prefix" {
+  type    = string
+  default = ""
+}
+
 variable "auth0_domain" {
   type = string
 }

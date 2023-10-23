@@ -1,6 +1,5 @@
 
 resource "random_id" "id" {
-  count       = var.object_name_prefix == "" ? 1 : 0
   byte_length = 4
   prefix      = "auth0-oidc-provider"
 }

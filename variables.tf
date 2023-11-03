@@ -1,6 +1,6 @@
 variable "object_name_prefix" {
   type    = string
-  default = ""
+  default = "auth0-oidc-provider-"
 }
 
 variable "auth0_domain" {
